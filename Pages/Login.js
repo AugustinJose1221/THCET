@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-
+import { NativeModules } from 'react-native'
+import DeviceInfo  from 'react-native-device-info';
+import { getUniqueId} from 'react-native-device-info';
 
 class Login extends Component {
    state = {
@@ -15,7 +17,9 @@ class Login extends Component {
       this.setState({ password: text })
    }
    login = (email, pass) => {
-      alert('email: ' + email + ' password: ' + pass)
+     const id = DeviceInfo.getUniqueId()
+       alert('email: ' + email + ' password: ' + pass + 'id:' + id)
+
    }
    render() {
       return (

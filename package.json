@@ -15,6 +15,7 @@
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "~0.62.2",
+    "react-native-device-info": "^6.0.1",
     "react-native-gesture-handler": "~1.6.1",
     "react-native-reanimated": "~1.9.0",
     "react-native-router-flux": "^4.2.0",
