@@ -7,18 +7,14 @@ import { getUniqueId} from 'react-native-device-info';
 
 class Login extends Component {
    state = {
-      email: '',
-      password: ''
+      username: '',
    }
-   handleEmail = (text) => {
-      this.setState({ email: text })
+   handleUsername = (text) => {
+      this.setState({ username: text })
    }
-   handlePassword = (text) => {
-      this.setState({ password: text })
-   }
-   login = (email, pass) => {
+   login = (username) => {
      const id = DeviceInfo.getUniqueId()
-       alert('email: ' + email + ' password: ' + pass + 'id:' + id)
+       alert('Username: ' + username + 'id:' + id)
 
    }
    render() {
@@ -26,22 +22,15 @@ class Login extends Component {
          <View style = {styles.container}>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
-               placeholder = "Email"
+               placeholder = "Username"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
-               onChangeText = {this.handleEmail}/>
-
-            <TextInput style = {styles.input}
-               underlineColorAndroid = "transparent"
-               placeholder = "Password"
-               placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"
-               onChangeText = {this.handlePassword}/>
+               onChangeText = {this.handleUsername}/>
 
             <TouchableOpacity
                style = {styles.submitButton}
                onPress = {
-                  () => this.login(this.state.email, this.state.password)
+                  () => this.login(this.state.username)
                }>
                <Text style = {styles.submitButtonText}> Submit </Text>
             </TouchableOpacity>
