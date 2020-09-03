@@ -32,7 +32,7 @@ class Login extends Component {
                onPress = {
                   () => this.login(this.state.username)
                }>
-               <Text style = {styles.submitButtonText}> Submit </Text>
+               <Text style = {styles.submitButtonText}> ENTER </Text>
             </TouchableOpacity>
          </View>
       )
