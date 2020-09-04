@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-nativ
 import { Actions } from 'react-native-router-flux'
 import { NativeModules } from 'react-native'
 import DeviceInfo  from 'react-native-device-info';
-import { getUniqueId} from 'react-native-device-info';
+import { getUniqueId } from 'react-native-device-info';
 
 class Login extends Component {
    state = {

@@ -1,6 +1,9 @@
 import React from 'react'
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { NativeModules } from 'react-native'
+import DeviceInfo  from 'react-native-device-info';
+import { getUniqueId} from 'react-native-device-info';
 
 const styles = StyleSheet.create({
     textContainer:{
@@ -26,16 +29,49 @@ const styles = StyleSheet.create({
 });
 
 const Home = () => {
-   const goToSignUp = () => {
+  /*
+   goToSignUp = () => {
       Actions.SignUp()
    }
-   const goToLogin = () => {
+   */
+   const deviceCheck = () => {
+     const id = DeviceInfo.getUniqueId()
+     fetch('http://192.168.43.168:8001', {
+         method: 'POST',
+         headers: {
+           Accept: 'application/json',
+           'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({
+           deviceId: "123456",
+         }),
+       }).then((response) => response.json())
+         .then((responseJson) => {
+        if (responseJson.a=="True") {
+          //goToSignUp();
+          console.log("SignUp")
+          Actions.SignUp()
+        }
+        else {
+          Actions.Login()
+        }
+         //alert(responseJson.a);
+         console.log(responseJson)
+     })
+     .catch((error) => {
+       console.error(error);
+     });
+   }
+
+/*
+   goToLogin = () => {
       Actions.Login()
    }
+   */
    return (
      <View style={styles.textContainer}>
      <View style={styles.container}>
-      <TouchableOpacity style = {styles.button} onPress = {goToLogin}>
+      <TouchableOpacity style = {styles.button} onPress = {deviceCheck}>
          <Text style = {styles.text}>Explore</Text>
       </TouchableOpacity>
       </View>

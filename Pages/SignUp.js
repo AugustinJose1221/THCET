@@ -39,7 +39,7 @@ class SignUp extends Component {
          <View style = {styles.container}>
            <TextInput style = {styles.input}
               underlineColorAndroid = "transparent"
-              placeholder = "Username"
+              placeholder = "SignUp Page"
               placeholderTextColor = "#9a73ef"
               autoCapitalize = "none"
               onChangeText = {this.handleUsername}/>
