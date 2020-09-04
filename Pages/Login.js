@@ -14,9 +14,31 @@ class Login extends Component {
    }
    login = (username) => {
      const id = DeviceInfo.getUniqueId()
-       alert('Username: ' + username + 'id:' + id)
 
-   }
+    //alert('Username: ' + username + 'id:' + id)
+
+
+    fetch('http://192.168.43.168:8001', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstParam: 'yourValue',
+          secondParam: 'yourOtherValue',
+        }),
+      }).then((response) => response.json())
+        .then((responseJson) => {
+        alert(responseJson.a);
+        console.log(responseJson)
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+     }
+
+
    render() {
       return (
          <View style = {styles.container}>
