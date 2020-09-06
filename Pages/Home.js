@@ -43,10 +43,12 @@ const Home = () => {
            'Content-Type': 'application/json',
          },
          body: JSON.stringify({
-           deviceId: "123456",
+           query: "Auth",
+           deviceId: id,
          }),
        }).then((response) => response.json())
          .then((responseJson) => {
+        //(responseJson)
         if (responseJson.a=="True") {
           //goToSignUp();
           console.log("SignUp")
