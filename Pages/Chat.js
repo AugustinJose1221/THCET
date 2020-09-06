@@ -9,26 +9,11 @@ export default function Chat() {
      * Mock message data
      */
     // example of system message
-    {
 
-      _id: 0,
-      text: 'New room created.',
-      createdAt: new Date().getTime(),
-      system: true
-
-    },
     // example of chat message
-    {
 
-      _id: 1,
-      text: 'Henlo!',
-      createdAt: new Date().getTime(),
-      user: {
-        _id: 2,
-        name: 'Test User'
-      }
 
-    }
+
   ]);
 
   // helper method that is sends a message
