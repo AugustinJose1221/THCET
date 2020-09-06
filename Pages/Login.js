@@ -25,11 +25,20 @@ class Login extends Component {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          firstParam: 'yourValue',
-          secondParam: 'yourOtherValue',
+          query: 'Login',
+          deviceId: id,
+          username: username,
         }),
       }).then((response) => response.json())
         .then((responseJson) => {
+          if (responseJson.a == "True") {
+            console.log("User added")
+            Actions.SignUp()
+          }
+          else {
+            console.log("User already exists")
+            Actions.Home()
+          }
         alert(responseJson.a);
         console.log(responseJson)
     })
