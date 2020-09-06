@@ -52,7 +52,7 @@ const Home = () => {
         if (responseJson.a=="True") {
           //goToSignUp();
           console.log("SignUp")
-          Actions.SignUp()
+          Actions.Chat()
         }
         else {
           Actions.Login()
